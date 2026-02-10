@@ -145,7 +145,7 @@
 
     <!-- RULES -->
     <section class="bg-slate-900 py-24 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14">
             <div>
                 <h3 class="text-2xl font-bold mb-4">👥 Syarat Peserta</h3>
                 <ul class="space-y-3 text-slate-300">
@@ -233,6 +233,15 @@
     <footer class="text-center py-6 text-slate-500 text-sm">
 
     </footer>
+    <script>
+        // This goes in the IFRAME code (GitHub), NOT the main website.
+        window.addEventListener('scroll', () => {
+            window.parent.postMessage({
+                type: 'scroll',
+                scrollY: window.scrollY
+            }, '*');
+        });
+    </script>
 
 </body>
 
